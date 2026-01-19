@@ -1,0 +1,150 @@
+.container {
+    position: relative;
+    padding: 2rem;
+    background-color: var(--black);
+    color: var(--white);
+    width: 100%;
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    background-color: transparent;
+    color: var(--white);
+    font-size: 2rem;
+    font-weight: 300;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    z-index: 10;
+    outline: none;
+
+    &:hover {
+        background-color: var(--input-background);
+        color: var(--orange);
+        transform: rotate(90deg);
+    }
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+    }
+}
+
+.image {
+    width: 100%;
+    max-width: 20rem;
+    height: auto;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border: 0.2rem solid var(--film-border-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1.5rem var(--film-card-shadow);
+    align-self: flex-start;
+
+    @media (min-width: 768px) {
+        max-width: 15rem;
+    }
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &__header {
+        margin-bottom: 0.5rem;
+
+        .title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--white);
+            line-height: 1.2;
+        }
+
+        .year {
+            color: var(--film-year-color);
+            font-weight: 500;
+        }
+    }
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    background-color: var(--film-card-background);
+    border-radius: 0.5rem;
+
+    &__item {
+        display: flex;
+        gap: 0.5rem;
+        font-size: 1rem;
+
+        .meta-label {
+            color: var(--light-grey);
+            font-weight: 500;
+            min-width: 6rem;
+        }
+
+        .meta-value {
+            color: var(--white);
+            font-weight: 400;
+        }
+
+        .rating {
+            color: var(--orange);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.genres {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    &__item {
+        padding: 0.4rem 1rem;
+        background-color: var(--input-background);
+        border: 0.1rem solid var(--autocomplete-border);
+        border-radius: 1.5rem;
+        font-size: 0.9rem;
+        color: var(--white);
+        transition: all 0.2s ease;
+
+        &:hover {
+            background-color: var(--input-background-hover);
+            border-color: var(--input-border-hover);
+        }
+    }
+}
+
+.description {
+    padding: 1rem;
+    background-color: var(--film-card-background);
+    border-radius: 0.5rem;
+    line-height: 1.6;
+
+    p {
+        margin: 0;
+        color: var(--light-grey);
+        font-size: 1rem;
+    }
+}

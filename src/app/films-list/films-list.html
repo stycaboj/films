@@ -1,0 +1,15 @@
+<div class="films-list">
+    @for (film of films(); track film.id) {
+        <div class="film" (click)="openFilmDialog(film)">
+            <img class="film__image" [src]="film.image" alt="{{ film.name }}">
+            <div class="film__details">
+                <span class="name">{{ film.name }}</span>
+                <span class="year">{{ film.year }}</span>
+            </div>
+        </div>
+    } @empty {
+        <div class="empty">
+            Фильмы не найдены
+        </div>
+    }
+</div>

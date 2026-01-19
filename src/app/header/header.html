@@ -1,0 +1,18 @@
+<div class="title">
+    КАТАЛОГ ФИЛЬМОВ
+</div>
+<mat-form-field class="search-input">
+    <mat-label>Поиск фильмов</mat-label>
+    <input
+        matInput
+        [formControl]="searchControl"
+        [matAutocomplete]="auto"
+        placeholder="Введите название фильма">
+    <mat-autocomplete #auto="matAutocomplete">
+        @for (film of autocompleteOptions(); track film.id) {
+            <mat-option [value]="film.name">
+                {{ film.name }}
+            </mat-option>
+        }
+    </mat-autocomplete>
+</mat-form-field>

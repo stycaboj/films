@@ -1,1 +1,101 @@
-/* You can add global styles to this file, and also import other style files */
+
+// Include theming for Angular Material with `mat.theme()`.
+// This Sass mixin will define CSS variables that are used for styling Angular Material
+// components according to the Material 3 design spec.
+// Learn more about theming and how to use it for your application's
+// custom components at https://material.angular.dev/guide/theming
+@use '@angular/material' as mat;
+
+html {
+  @include mat.theme((
+    color: (
+      primary: mat.$azure-palette,
+      tertiary: mat.$blue-palette,
+    ),
+    typography: Roboto,
+    density: 0,
+  ));
+}
+
+body {
+  // Default the application to a light color theme. This can be changed to
+  // `dark` to enable the dark color theme, or to `light dark` to defer to the
+  // user's system settings.
+  color-scheme: light;
+
+  // Set a default background, font and text colors for the application using
+  // Angular Material's system-level CSS variables. Learn more about these
+  // variables at https://material.angular.dev/guide/system-variables
+  background-color: var(--mat-sys-surface);
+  color: var(--mat-sys-on-surface);
+  font: var(--mat-sys-body-medium);
+
+  // Reset the user agent margin.
+  margin: 0;
+}
+
+@import './shared/styles/variables.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: -0.1px;
+}
+
+html, body { height: 100%; }
+
+.cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+    background-color: var(--dialog-backdrop);
+}
+
+.mat-mdc-dialog-surface {
+    background-color: var(--dialog-background) !important;
+}
+
+.cdk-overlay-container .mat-mdc-autocomplete-panel {
+    background-color: var(--autocomplete-background) !important;
+    border: 0.15rem solid var(--autocomplete-border) !important;
+    border-radius: 0.5rem !important;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(0.5rem);
+}
+
+.cdk-overlay-container .mat-mdc-option {
+    color: var(--autocomplete-option-text) !important;
+    transition: all 0.2s ease;
+    min-height: 3rem;
+    padding: 0.75rem 1rem;
+}
+
+.cdk-overlay-container .mat-mdc-option .mdc-list-item__primary-text {
+    color: var(--autocomplete-option-text) !important;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.cdk-overlay-container .mat-mdc-option:hover:not(.mdc-list-item--disabled),
+.cdk-overlay-container .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) {
+    background-color: var(--autocomplete-option-background-hover) !important;
+}
+
+.cdk-overlay-container .mat-mdc-option:hover:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+    color: var(--autocomplete-option-text) !important;
+}
+
+.cdk-overlay-container .mat-mdc-option .mat-mdc-option-ripple {
+    background-color: transparent;
+}
+
+.cdk-overlay-container .mat-mdc-option:hover:not(.mdc-list-item--disabled) .mat-mdc-option-ripple::before {
+    background-color: var(--autocomplete-option-background-hover);
+    opacity: 1;
+}

@@ -1,0 +1,98 @@
+:host {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 2rem;
+    width: 100%;
+    color: var(--header-text-color);
+    background-color: var(--header-background-color);
+    box-shadow: 0 0.1rem 1rem var(--header-shadow-color);
+
+    .title {
+        font-size: 1.4rem;
+        font-weight: 600;
+        letter-spacing: 0.2rem;
+        background: linear-gradient(90deg, var(--white) 0%, var(--orange) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        transition: all 0.3s ease;
+    }
+
+    .search-input {
+        max-width: 20rem;
+        width: 100%;
+
+        ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+            display: none !important;
+        }
+
+        ::ng-deep .mat-mdc-text-field-wrapper {
+            background-color: var(--input-background);
+            border-radius: 0.5rem;
+            border: 0.15rem solid var(--input-border);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(0.5rem);
+        }
+
+        ::ng-deep .mat-mdc-text-field-wrapper:hover {
+            background-color: var(--input-background-hover);
+            border-color: var(--input-border-hover);
+            box-shadow: 0 0 1rem var(--input-shadow-hover);
+        }
+
+        ::ng-deep .mat-mdc-text-field-wrapper.mdc-text-field--focused {
+            background-color: var(--input-background-focus);
+            border-color: var(--input-border-focus);
+            box-shadow: 0 0 1.5rem var(--input-shadow-focus);
+        }
+
+        ::ng-deep .mdc-text-field__input {
+            color: var(--input-text);
+            font-size: 1rem;
+        }
+
+        ::ng-deep .mdc-text-field__input::placeholder {
+            color: var(--input-placeholder);
+        }
+
+        ::ng-deep .mat-mdc-floating-label {
+            color: var(--input-label);
+        }
+
+        ::ng-deep .mat-mdc-floating-label.mdc-floating-label--float-above {
+            color: var(--input-label-focused);
+        }
+
+        ::ng-deep .mdc-line-ripple {
+            display: none;
+        }
+
+        ::ng-deep .mdc-line-ripple::before {
+            display: none;
+        }
+
+        ::ng-deep .mat-mdc-form-field-focus-overlay {
+            background-color: transparent;
+        }
+
+        ::ng-deep .mat-mdc-autocomplete-panel {
+            background-color: var(--autocomplete-background);
+            border: 0.15rem solid var(--autocomplete-border);
+            border-radius: 0.5rem;
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(0.5rem);
+        }
+
+        ::ng-deep .mat-mdc-option {
+            background-color: var(--autocomplete-option-background);
+            color: var(--autocomplete-option-text);
+            transition: all 0.2s ease;
+        }
+
+        ::ng-deep .mat-mdc-option:hover:not(.mdc-list-item--disabled),
+        ::ng-deep .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) {
+            background-color: var(--autocomplete-option-background-hover);
+        }
+    }
+}

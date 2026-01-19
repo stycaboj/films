@@ -1,0 +1,44 @@
+<div class="container">
+    <button class="close-button" (click)="closeDialog()">
+        ×
+    </button>
+    <div class="content">
+        <img class="image" [src]="data.image" alt="{{ data.name }}">
+
+        <div class="info">
+            <div class="info__header">
+                <h2 class="title">
+                    {{ data.name }}
+                    <span class="year">({{ data.year }})</span>
+                </h2>
+            </div>
+
+            <div class="meta">
+                <div class="meta__item">
+                    <span class="meta-label">Страна:</span>
+                    <span class="meta-value">{{ data.country }}</span>
+                </div>
+                <div class="meta__item">
+                    <span class="meta-label">Режиссёр:</span>
+                    <span class="meta-value">{{ data.director }}</span>
+                </div>
+                <div class="meta__item">
+                    <span class="meta-label">Рейтинг:</span>
+                    <span class="meta-value rating">{{ data.rating }}</span>
+                </div>
+            </div>
+
+            <div class="genres">
+                @for (genre of data.genres; track genre) {
+                    <span class="genres__item">{{ genre }}</span>
+                }
+            </div>
+
+            @if (data.description) {
+                <div class="description">
+                    <p>{{ data.description }}</p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

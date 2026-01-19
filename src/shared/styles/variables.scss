@@ -1,0 +1,45 @@
+:root {
+    --black: #141414;
+    --white: #FFF;
+    --deep-blue: #261294;
+    --light-grey: #afafaf;
+    --grey: #666666;
+    --orange: #ff9900;
+
+    --header-background-color: var(--black);
+    --header-text-color: var(--white);
+    --header-shadow-color: var(--light-grey);
+
+    --film-name-color: var(--grey);
+    --film-name-hover-color: var(--deep-blue);
+    --film-border-color: var(--light-grey);
+    --film-year-color: var(--orange);
+
+    --input-background: #ffffff1a;
+    --input-background-hover: #ffffff26;
+    --input-background-focus: #ffffff33;
+    --input-border: var(--light-grey);
+    --input-border-hover: #ff990080;
+    --input-border-focus: var(--orange);
+    --input-text: var(--white);
+    --input-placeholder: #ffffff80;
+    --input-label: #ffffffb3;
+    --input-label-focused: var(--orange);
+    --input-shadow-hover: #ff990033;
+    --input-shadow-focus: #ff990066;
+    --mat-sys-on-surface-variant: var(--light-grey);
+
+    --autocomplete-background: var(--black);
+    --autocomplete-option-background-hover: #ff990033;
+    --autocomplete-option-text: var(--white);
+    --autocomplete-border: #ffffff1a;
+
+    --film-card-background: #ffffff08;
+    --film-card-background-hover: #e7d7a1;
+    --film-card-border-hover: var(--orange);
+    --film-card-shadow: #0000004d;
+    --film-card-shadow-hover: #ff990033;
+
+    --dialog-background: var(--black);
+    --dialog-backdrop: #000000cc;
+}
